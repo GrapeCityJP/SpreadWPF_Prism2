@@ -1,0 +1,22 @@
+﻿<Window
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:prism="http://prismlibrary.com/"
+        x:Class="SpreadWPF_Prism2.Views.MainWindow"
+        prism:ViewModelLocator.AutoWireViewModel="True"
+        Title="SpreadWPF with Prism 2" Height="380" Width="455" 
+        WindowStartupLocation="CenterScreen">
+    <DockPanel LastChildFill="True">
+        <StackPanel Orientation="Horizontal" DockPanel.Dock="Top" Margin="5">
+            <Button Command="{Binding NavigateCommand}" CommandParameter="ViewA" 
+                    Background="AliceBlue" Foreground="Blue" Margin="5" 
+                    Content="Viewの表示"/>
+            <Button Command="{Binding NavigateCommand}" CommandParameter="" 
+                    Background="AliceBlue" Foreground="Blue" Margin="5" 
+                    Content="Viewの非表示"/>
+            <Button Command="{Binding SaveCommand}" Background="Khaki" 
+                    Margin="5" Content="データの保存"/>
+        </StackPanel>
+        <ContentControl prism:RegionManager.RegionName="ContentRegion" Margin="5"/>
+    </DockPanel>
+</Window>
